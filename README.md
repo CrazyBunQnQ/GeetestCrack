@@ -35,7 +35,13 @@ import base64
 
 ### 获取背景图数据
 
-通过 `get_base64_by_canvas(driver, class_name, contain_type)` 方法获取指定类名的 `canvas` 标签图片数据
+为了反爬虫，GEETEST 最新版的背景图打乱了顺序：
+
+![乱序图片](http://wx3.sinaimg.cn/large/a6e9cb00ly1fuvjf3q1gtj208o04g76j.jpg)  ![正常图片](http://wx2.sinaimg.cn/large/a6e9cb00ly1fuvjhc1xjxj207804g0uh.jpg)
+
+看了 [\_\_\_PANDA\_\_\_](https://blog.csdn.net/qq_38685503/article/details/81187105) 的方法，感觉很麻烦，如果网站用的图片很多的话，会需要很多时间来保存这些图片，费时费力还不一定准确。
+
+所以想了个办法，通过 JS 代码获取背景图数据，通过 `get_base64_by_canvas(driver, class_name, contain_type)` 方法直接获取指定类名的 `canvas` 标签图片数据，绕过乱序图拼接为完整图的步骤，完美下载正常顺序的图片。
 
 ### 保存背景图片
 
