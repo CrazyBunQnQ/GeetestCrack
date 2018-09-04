@@ -11,13 +11,6 @@ from PIL import Image
 # 鼠标操作
 from selenium.webdriver.common.action_chains import ActionChains
 
-# 原图
-sourceImgClass = "geetest_canvas_fullbg geetest_fade geetest_absolute"
-# 缺口图
-bgImgClass = "geetest_canvas_bg geetest_absolute"
-# 滑块
-sliderClass = 'geetest_slider_button'
-
 # 初始偏移量
 initial_offset = 39
 
@@ -55,7 +48,7 @@ def get_base64_by_canvas(driver, class_name, contain_type):
         return bg_img[bg_img.find(',') + 1:]
 
 
-def save_bg(driver, bg_path="bg.png", bg_class=bgImgClass):
+def save_bg(driver, bg_path="bg.png", bg_class='geetest_canvas_bg geetest_absolute'):
     """
     保存包含缺口的背景图
     :param driver: webdriver 对象
@@ -68,7 +61,7 @@ def save_bg(driver, bg_path="bg.png", bg_class=bgImgClass):
     return bg_path
 
 
-def save_full_bg(driver, full_bg_path="fbg.png", full_bg_class=sourceImgClass):
+def save_full_bg(driver, full_bg_path="fbg.png", full_bg_class='geetest_canvas_fullbg geetest_fade geetest_absolute'):
     """
     保存完整的的背景图
     :param driver: webdriver 对象
@@ -81,7 +74,7 @@ def save_full_bg(driver, full_bg_path="fbg.png", full_bg_class=sourceImgClass):
     return full_bg_path
 
 
-def get_slider(driver, slider_class=sliderClass):
+def get_slider(driver, slider_class='geetest_slider_button'):
     """
     获取滑块
     :param slider_class: 滑块的 class 属性

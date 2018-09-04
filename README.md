@@ -88,6 +88,7 @@ geetest.drag_the_ball(driver, track)
 ```
 
 >无特殊情况不需要传标签类名的参数
+>偏移量默认 39，可根据自身情况设置: `geetest.initial_offset = 35`
 
 ## 效果演示
 
