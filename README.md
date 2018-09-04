@@ -94,8 +94,8 @@ geetest.drag_the_ball(driver, track)
 
 ![效果图](http://wx3.sinaimg.cn/large/a6e9cb00ly1fuv2grdkftg207s07z4e9.gif)
 
-至此，可以就可以不用提前保存各种验证码图片了，全都能自动破解验证码了~
+至此，可以就可以不用提前保存各种验证码图片了，全都能自动破解验证码了\~
 
-各位大神喜欢的话请给项目点个星星~谢谢~
+各位大神喜欢的话请给项目点个星星\~谢谢\~
 
 ![](http://wx1.sinaimg.cn/large/a6e9cb00ly1fuxwjpwisjg209v01pgm3.gif)
