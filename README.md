@@ -57,4 +57,44 @@ import base64
 
 `get_track(distance)` 方法根据移动距离生成模拟人的移动轨迹，该方法直接借鉴 [\_\_\_PANDA\_\_\_](https://blog.csdn.net/qq_38685503/article/details/81187105) 的方法
 
+## 使用方法
+
+因为可能其他地方也会用到，所以单独写了这个工具类，使用的时候 `import` 一下直接调用方法就行啦~
+
+```python
+import geetest
+import time
+from selenium import webdriver
+
+driver = webdriver.Chrome()
+driver.get("https://otcbtc.com/sign_in")
+time.sleep(5)
+submit_btn = driver.find_element_by_id('login-submit-btn')
+submit_btn.click()
+time.sleep(2)
+# 上面只是打开 otcbtc 网站验证码的例子，下面是调用 geetest.py 的方法
+
+# 保存包含缺口的页面截图
+bg_path = geetest.save_bg(driver)
+# 保存完整背景图
+full_bg_path = geetest.save_full_bg(driver)
+# 移动距离
+distance = geetest.get_offset(full_bg_path, bg_path)
+# 获取移动轨迹
+track = geetest.get_track(distance)
+# 滑动圆球至缺口处
+geetest.drag_the_ball(driver, track)
+# 到此就完成滑动验证码啦~
+```
+
+>无特殊情况不需要传标签类名的参数
+
+## 效果演示
+
+![效果图](http://wx3.sinaimg.cn/large/a6e9cb00ly1fuv2grdkftg207s07z4e9.gif)
+
 至此，可以就可以不用提前保存各种验证码图片了，全都能自动破解验证码了~
+
+各位大神喜欢的话请给项目点个星星~谢谢~
+
+![](http://wx1.sinaimg.cn/large/a6e9cb00ly1fuxwjpwisjg209v01pgm3.gif)
