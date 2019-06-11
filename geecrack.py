@@ -11,9 +11,6 @@ from PIL import Image
 # 鼠标操作
 from selenium.webdriver.common.action_chains import ActionChains
 
-# 初始偏移量
-initial_offset = 39
-
 
 def save_base64img(data_str, save_name):
     """
@@ -109,22 +106,22 @@ def is_pixel_equal(img1, img2, x, y):
         return False
 
 
-def get_offset(full_bg_path, bg_path):
+def get_offset(full_bg_path, bg_path, offset=35):
     """
     获取缺口偏移量
     :param full_bg_path: 不带缺口图片路径
     :param bg_path: 带缺口图片路径
+    :param offset: 偏移量， 默认 35
     :return:
     """
     full_bg = Image.open(full_bg_path)
     bg = Image.open(bg_path)
-    left = initial_offset
-    for i in range(left, full_bg.size[0]):
+    for i in range(offset, full_bg.size[0]):
         for j in range(full_bg.size[1]):
             if not is_pixel_equal(full_bg, bg, i, j):
-                left = i
-                return left
-    return left
+                offset = i
+                return offset
+    return offset
 
 
 def get_track(distance):
