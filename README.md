@@ -62,7 +62,7 @@ import base64
 因为可能其他地方也会用到，所以单独写了这个工具类，使用的时候 `import` 一下直接调用方法就行啦~
 
 ```python
-import geetest
+import geecrack
 import time
 from selenium import webdriver
 
@@ -75,20 +75,20 @@ time.sleep(2)
 # 上面只是打开 otcbtc 网站验证码的例子，下面是调用 geetest.py 的方法
 
 # 保存包含缺口的页面截图
-bg_path = geetest.save_bg(driver)
+bg_path = geecrack.save_bg(driver)
 # 保存完整背景图
-full_bg_path = geetest.save_full_bg(driver)
+full_bg_path = geecrack.save_full_bg(driver)
 # 移动距离
-distance = geetest.get_offset(full_bg_path, bg_path)
+distance = geecrack.get_offset(full_bg_path, bg_path)
 # 获取移动轨迹
-track = geetest.get_track(distance)
+track = geecrack.get_track(distance)
 # 滑动圆球至缺口处
-geetest.drag_the_ball(driver, track)
+geecrack.drag_the_ball(driver, track)
 # 到此就完成滑动验证码啦~
 ```
 
 >无特殊情况不需要传标签类名的参数
->偏移量默认 39，可根据自身情况设置: `geetest.initial_offset = 35`
+>偏移量默认 39，可根据自身情况设置: `geecrack.initial_offset = 35`
 
 ## 效果演示
 
