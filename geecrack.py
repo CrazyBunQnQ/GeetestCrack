@@ -162,7 +162,7 @@ def drag_the_ball(driver, track):
         track.remove(x)
     time.sleep(0.1)
     # 模拟人往回滑动
-    imitate = ActionChains(driver).move_by_offset(xoffset=-1, yoffset=0)
+    imitate = ActionChains(driver).move_by_offset(xoffset=-2, yoffset=0)
     time.sleep(0.015)
     imitate.perform()
     time.sleep(random.randint(6, 10) / 10)

@@ -35,11 +35,11 @@ bg_path = geecrack.save_bg(driver)
 # 保存完整背景图
 full_bg_path = geecrack.save_full_bg(driver)
 # 移动距离
-distance = geecrack.get_offset(full_bg_path, bg_path)
+distance = geecrack.get_offset(full_bg_path, bg_path, offset=35)
 # 获取移动轨迹
 track = geecrack.get_track(distance)
 # 滑动圆球至缺口处
-geecrack.drag_the_ball(driver, track, offset=30)
+geecrack.drag_the_ball(driver, track)
 # 到此就完成滑动验证码啦~
 time.sleep(10)
 driver.close()
