@@ -1,3 +1,5 @@
+
+
 # Python Selenium 破解滑块验证码最新版
 
 >本文破解方式截止到 2018 年 9 月 2 日的 GEETEST 有效，本文不定期更新。
@@ -72,7 +74,7 @@ time.sleep(5)
 submit_btn = driver.find_element_by_id('login-submit-btn')
 submit_btn.click()
 time.sleep(2)
-# 上面只是打开 otcbtc 网站验证码的例子，下面是调用 geetest.py 的方法
+# 上面只是打开 otcbtc 网站验证码的例子，下面是调用 geecrack.py 的方法
 
 # 保存包含缺口的页面截图
 bg_path = geecrack.save_bg(driver)
